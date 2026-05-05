@@ -1,0 +1,19 @@
+{
+  "name": "timber-erp",
+  "version": "1.0.0",
+  "description": "TimberERP - Wood Industry ERP System",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && node server.js",
+    "client": "cd client && npm run dev",
+    "seed": "cd server && node seed/seedData.js",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "express-async-handler": "^1.2.0"
+  }
+}

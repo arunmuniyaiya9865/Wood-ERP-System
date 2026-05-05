@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+/* =========================
+   ROOT COLORS (SOFT UI)
+========================= */
+:root {
+  --bg-main: #eef2ff;
+  --bg-secondary: #e6ebff;
+
+  --panel: rgba(255, 255, 255, 0.55);
+  --panel-strong: rgba(255, 255, 255, 0.75);
+  --panel-border: rgba(140, 160, 220, 0.25);
+
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  --accent-start: #7c3aed;
+  --accent-mid: #6366f1;
+  --accent-end: #22d3ee;
+
+  --shadow-soft: 0 20px 40px rgba(100, 116, 139, 0.15);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
+  color: var(--text-primary);
+}
+
+/* ambient gradient glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(124,58,237,0.15), transparent),
+    radial-gradient(circle at 80% 80%, rgba(99,102,241,0.15), transparent);
+  z-index: -1;
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+.glass-card {
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.glass-card-header {
+  border-bottom: 1px solid rgba(140,160,220,0.2);
+  padding: 1rem 1.25rem;
+}
+
+.glass-card-title {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.glass-card-subtitle {
+  color: var(--text-secondary);
+}
+
+.glass-card-body {
+  padding: 1.25rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-gradient {
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-mid), var(--accent-end));
+  box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+}
+
+.btn-glass {
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--panel-border);
+  color: var(--text-primary);
+}
+
+/* =========================
+   INPUT
+========================= */
+.input-glass {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--panel-strong);
+  border: 1px solid var(--panel-border);
+  color: var(--text-primary);
+}
+
+.input-glass::placeholder {
+  color: var(--text-muted);
+}
+
+/* =========================
+   TABS
+========================= */
+.tab-btn {
+  padding: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.active-tab {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent-mid);
+}
+
+/* =========================
+   TABLE
+========================= */
+.table-soft {
+  background: rgba(255,255,255,0.4);
+}
+
+.table-soft tr:hover {
+  background: rgba(255,255,255,0.6);
+}
+
+.td {
+  padding: 12px;
+  color: var(--text-secondary);
+}
+
+/* =========================
+   STAT CARDS
+========================= */
+.stat-card {
+  background: var(--panel);
+  border-radius: 18px;
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.stat-card-label {
+  color: var(--text-muted);
+}
+
+.stat-card-value {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+/* =========================
+   SIDEBAR (ONLY COLOR CHANGE)
+========================= */
+.sidebar-glass {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--panel-border);
+}
+
+.sidebar-link {
+  color: var(--text-secondary);
+}
+
+.sidebar-link:hover {
+  background: rgba(124,58,237,0.1);
+  color: var(--text-primary);
+}
+
+.sidebar-link-active {
+  background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.2));
+  color: var(--text-primary);
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar-glass {
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+/* =========================
+   SPECIAL CARD (LEFT BIG ONE)
+========================= */
+.gradient-card {
+  background: linear-gradient(160deg, #7c3aed, #6366f1, #22d3ee);
+  color: white;
+  box-shadow: 0 20px 50px rgba(124,58,237,0.4);
+  border-radius: 24px;
+}
